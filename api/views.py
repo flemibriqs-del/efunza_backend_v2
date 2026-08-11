@@ -1,1 +1,1 @@
-<full file content>
+[FULL_API_VIEWS_CONTENT]
