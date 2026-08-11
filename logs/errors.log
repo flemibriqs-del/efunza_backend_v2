@@ -1,0 +1,981 @@
+ERROR 2026-07-30 20:10:33,528 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:33,678 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:37,885 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:38,428 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:38,674 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:38,912 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:39,299 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:39,833 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:40,160 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 20:10:40,400 log 3720703 139909460772672 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 22:24:35,879 log 3890417 139708881528640 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 22:24:36,019 log 3890417 139708881528640 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 22:24:38,484 log 3890417 139708881528640 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-07-30 22:24:39,220 log 3890417 139708881528640 Internal Server Error: /api/admin/dashboard/stats/
+Traceback (most recent call last):
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/gisbomhj/Efunza/api/views.py", line 2751, in admin_dashboard_stats
+    top_books = Book.objects.filter(is_published=True).annotate(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1654, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/query.py", line 1706, in _annotate
+    clone.query.add_annotation(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1220, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 176, in resolve_expression
+    result = super().resolve_expression(*args, **kwargs)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/aggregates.py", line 63, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 298, in resolve_expression
+    source_expressions = [
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2057, in resolve_ref
+    join_info = self.setup_joins(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1908, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/gisbomhj/virtualenv/Efunza/3.10/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'userbook' into field. Choices are: author, category, cover, created_at, description, estimated_minutes, external_url, file, grade, id, is_featured, is_published, language, metadata, pages, program, reader_records, reading_level, slug, text_content, title, updated_at, xp_reward
+ERROR 2026-08-10 19:36:15,056 log 19348 15124 Internal Server Error: /admin/api/maritimecontent/
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: api_maritimecontent
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\contrib\admin\options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\contrib\admin\options.py", line 2025, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\contrib\admin\options.py", line 868, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 606, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\query.py", line 646, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\query.py", line 628, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: api_maritimecontent
+ERROR 2026-08-10 19:36:15,061 basehttp 19348 15124 "GET /admin/api/maritimecontent/ HTTP/1.1" 500 201647
+ERROR 2026-08-10 19:41:54,640 log 18788 3492 Internal Server Error: /api/maritime-enrollments/
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_views.py", line 57, in perform_create
+    serializer.save(user=self.request.user)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_serializers.py", line 125, in create
+    return super().create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+ERROR 2026-08-10 19:41:54,647 basehttp 18788 3492 "POST /api/maritime-enrollments/ HTTP/1.1" 500 26408
+ERROR 2026-08-10 22:40:18,108 log 13676 17928 Internal Server Error: /api/maritime-enrollments/
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_views.py", line 58, in perform_create
+    serializer.save()
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_serializers.py", line 145, in create
+    enrollment = super().create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+ERROR 2026-08-10 22:40:18,113 basehttp 13676 17928 "POST /api/maritime-enrollments/ HTTP/1.1" 500 26384
+ERROR 2026-08-10 23:46:56,707 log 20388 14476 Internal Server Error: /api/maritime-enrollments/
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_views.py", line 51, in perform_create
+    serializer.save()
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_serializers.py", line 91, in create
+    enrollment = super().create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+ERROR 2026-08-10 23:46:56,714 basehttp 20388 14476 "POST /api/maritime-enrollments/ HTTP/1.1" 500 26606
+ERROR 2026-08-10 23:47:42,525 log 20388 14476 Internal Server Error: /api/maritime-enrollments/
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_views.py", line 51, in perform_create
+    serializer.save()
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\api\maritime_serializers.py", line 91, in create
+    enrollment = super().create(validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\SIMON\Downloads\backend_1-main\backend_1-main\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: api_maritimeenrollment.user_id, api_maritimeenrollment.course_id
+ERROR 2026-08-10 23:47:42,534 basehttp 20388 14476 "POST /api/maritime-enrollments/ HTTP/1.1" 500 26606

@@ -1,0 +1,29 @@
+AI CHAT FIX REPORT
+
+Problem found:
+api/urls.py maps /api/ai/chat/ to AIChatView before api.elab_ai_urls is included.
+AIChatView was hardcoded as "Efunza Readathon AI" and used a book-focused system prompt.
+Therefore E-Lab requests were still being answered as book/readathon requests.
+
+Fix applied:
+1. api/ai_engine.py replaced with dedicated module-aware AI router.
+2. api/views.py patched so AIChatView detects agent='elab' or module starting with 'elab'.
+3. E-Lab requests now return through run_module_ai(...), not the Readathon prompt.
+4. Response includes response/answer/reply/message for frontend compatibility.
+5. E-Lab backend actions in elab_ai_views.py now pass module='elab_project'.
+
+Test payload:
+POST /api/ai/chat/
+{
+  "agent": "elab",
+  "module": "elab_free_circuit",
+  "prompt": "Review my ESP32 sign language glove project.",
+  "context": {
+    "title": "ESP32 Sign Language Glove",
+    "materials": ["ESP32", "flex sensors", "OLED"]
+  }
+}
+
+Expected:
+The answer should discuss circuit, sensors, wiring, power, safety, testing, budget and improvements.
+It should NOT mention books, chapters, stories, or Readathon.
