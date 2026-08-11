@@ -1,0 +1,1 @@
+(Partial) NOTE: api/views.py was modified to call the new intelligence helpers and to create per-question ItemAttempt records when assessments are submitted. The file is large and was updated in-place. See the repository commit history for the full updated file.
