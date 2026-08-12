@@ -274,4 +274,34 @@ class ClosedLoopService:
         summary = {
             'action_taken': recommend.get('action', 'none'),
             'action_reason': recommend.get('reason', ''),
-           
+            'priority': recommend.get('priority', 0),
+            'weaknesses_identified': len(steps.get('diagnose', {}).get('weaknesses', [])),
+            'verified': steps.get('verify', {}).get('verification_status') == 'auto_verified',
+        }
+        
+        if recommend.get('target'):
+            summary['target_concept'] = recommend.get('target')
+        
+        return summary
+    
+    def get_loop_history(self, limit: int = 10) -> List[Dict]:
+        """
+        Get recent closed-loop history for the user.
+        """
+        # Get from cache or database
+        # For now, we'll get from cache
+        cache_pattern = f"loop_{self.user.id}_*"
+        keys = cache.keys(cache_pattern)
+        
+        loops = []
+        for key in sorted(keys, reverse=True)[:limit]:
+            data = cache.get(key)
+            if data:
+                loops.append({
+                    'timestamp': data.get('end_time'),
+                    'action': data.get('next_action', {}).get('action'),
+                    'status': data.get('status'),
+                    'duration': data.get('duration'),
+                })
+        
+        return loops
