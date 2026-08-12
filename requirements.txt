@@ -11,3 +11,5 @@ PyMuPDF==1.26.3
 dj-database-url==2.3.0
 django-storages==1.14.4
 boto3==1.35.99
+django-redis==5.3.0
+celery==5.3.1
