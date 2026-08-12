@@ -47,4 +47,73 @@ class CompetencyViewSet(viewsets.ModelViewSet):
         
         level = self.request.query_params.get('level')
         if level:
-            queryset = queryset
+            queryset = queryset.filter(level=level)
+        
+        return queryset
+
+
+class CompetencyEvidenceViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet for competency evidence.
+    """
+    serializer_class = CompetencyEvidenceSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        return CompetencyEvidence.objects.filter(user=self.request.user)
+    
+    def create(self, request, *args, **kwargs):
+        """Create evidence from learning activity."""
+        serializer = CompetencyEvidenceCreateSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        # Process evidence
+        engine = CompetencyEngine(request.user)
+        evidence = engine.process_evidence(serializer.validated_data)
+        
+        response_serializer = CompetencyEvidenceSerializer(evidence)
+        return Response(response_serializer.data, status=status.HTTP_201_CREATED)
+    
+    @action(detail=True, methods=['post'])
+    def verify(self, request, pk=None):
+        """Verify evidence."""
+        evidence = self.get_object()
+        engine = CompetencyEngine(request.user)
+        
+        notes = request.data.get('notes', '')
+        verified_evidence = engine.verify_evidence(
+            evidence_id=evidence.id,
+            verifier=request.user,
+            notes=notes
+        )
+        
+        serializer = CompetencyEvidenceSerializer(verified_evidence)
+        return Response(serializer.data)
+
+
+class CompetencyAssessmentViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet for competency assessments.
+    """
+    queryset = CompetencyAssessment.objects.all()
+    serializer_class = CompetencyAssessmentSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        return CompetencyAssessment.objects.filter(user=self.request.user)
+    
+    @action(detail=False, methods=['get'])
+    def profile(self, request):
+        """Get user's competency profile."""
+        engine = CompetencyEngine(request.user)
+        profile = engine.get_competency_profile()
+        
+        serializer = CompetencyProfileSerializer(profile)
+        return Response(serializer.data)
+    
+    @action(detail=False, methods=['get'])
+    def recommendations(self, request):
+        """Get evidence recommendations."""
+        engine = CompetencyEngine(request.user)
+        recommendations = engine.get_evidence_recommendations()
+        return Response(recommendations)
