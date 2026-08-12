@@ -58,7 +58,7 @@ def process_pending_evidence(batch_limit: int = 100) -> dict:
     """Process or auto-verify pending competency evidence.
 
     This task scans for evidence in 'submitted' state and performs simple
-    automated processing such as auto-verifying high-quality evidence. It's a
+    automated processing such as auto-verifying high-quality items. It's a
     conservative starter implementation — replace or extend with your
     production verification pipeline.
     """
@@ -97,3 +97,14 @@ def process_pending_evidence(batch_limit: int = 100) -> dict:
         'errors': errors,
         'completed_at': timezone.now().isoformat(),
     }
+
+
+# Backwards-compatible task names expected by settings.py (aliasing)
+@shared_task(name='intelligence.tasks.update_all_mastery')
+def update_all_mastery(*args, **kwargs):
+    return update_all_mastery_task.apply(args=args, kwargs=kwargs).get()
+
+
+@shared_task(name='intelligence.tasks.process_pending_evidence')
+def process_pending_evidence_task(*args, **kwargs):
+    return process_pending_evidence.apply(args=args, kwargs=kwargs).get()
